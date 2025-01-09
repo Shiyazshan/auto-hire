@@ -93,9 +93,9 @@ function Dashboard() {
               <MDBox mb={3}>
                 <ReportsBarChart
                   color="info"
-                  title="website views"
-                  description="Last Campaign Performance"
-                  date="campaign sent 2 days ago"
+                  title="Job Post Impressions"
+                  description="Tracks how many times the job post was shown to users."
+                  date="updated 2 minutes ago"
                   chart={reportsBarChartData}
                 />
               </MDBox>
@@ -104,11 +104,9 @@ function Dashboard() {
               <MDBox mb={3}>
                 <ReportsLineChart
                   color="success"
-                  title="daily sales"
+                  title="Applicant Demographics"
                   description={
-                    <>
-                      (<strong>+15%</strong>) increase in today sales.
-                    </>
+                    "Distribution of applicants based on factors like location, experience, or skills."
                   }
                   date="updated 4 min ago"
                   chart={sales}
@@ -119,8 +117,8 @@ function Dashboard() {
               <MDBox mb={3}>
                 <ReportsLineChart
                   color="dark"
-                  title="completed tasks"
-                  description="Last Campaign Performance"
+                  title="Hiring Rate"
+                  description="The percentage of applicants who were successfully hired compared to the total number of applicants."
                   date="just updated"
                   chart={tasks}
                 />

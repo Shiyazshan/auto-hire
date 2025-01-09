@@ -1,6 +1,12 @@
-
-
 export default {
-  labels: ["M", "T", "W", "T", "F", "S", "S"],
-  datasets: { label: "Sales", data: [50, 20, 10, 22, 50, 10, 40] },
+  labels: [
+    "LinkedIn",
+    "Glassdoor",
+    "Indeed",
+    "Monster",
+    "Naukri",
+    "Facebook",
+    "Twitter",
+  ],
+  datasets: { label: "Impressions", data: [150, 120, 200, 180, 170, 140, 130] },
 };
