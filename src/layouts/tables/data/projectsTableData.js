@@ -1,9 +1,6 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react/function-component-definition */
 
-// @mui material components
-import Icon from "@mui/material/Icon";
-
 // AutoHire React components
 import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
@@ -11,29 +8,33 @@ import MDAvatar from "components/MDAvatar";
 import MDProgress from "components/MDProgress";
 
 // Images
-import LogoAsana from "assets/images/small-logos/logo-asana.svg";
-import logoGithub from "assets/images/small-logos/github.svg";
-import logoAtlassian from "assets/images/small-logos/logo-atlassian.svg";
-import logoSlack from "assets/images/small-logos/logo-slack.svg";
-import logoSpotify from "assets/images/small-logos/logo-spotify.svg";
-import logoInvesion from "assets/images/small-logos/logo-invision.svg";
+import team2 from "assets/images/team-2.jpg";
+import team3 from "assets/images/team-3.jpg";
+import team4 from "assets/images/team-4.jpg";
+
+// Utility function to generate a random 10-digit phone number
+const generateRandomPhone = () => {
+  const phone = Math.floor(Math.random() * 10000000000); // Generates a 10-digit number
+  return `+${phone.toString().padStart(10, "0")}`; // Prepending "+" and ensuring it is 10 digits long
+};
+
+// Utility function to generate a random score between 1 and 10
+const generateRandomScore = () => {
+  return Math.floor(Math.random() * 10) + 1; // Generates a score between 1 and 10
+};
 
 export default function data() {
-  const Project = ({ image, name }) => (
+  const Author = ({ image, name, email }) => (
     <MDBox display="flex" alignItems="center" lineHeight={1}>
-      <MDAvatar src={image} name={name} size="sm" variant="rounded" />
-      <MDTypography
-        display="block"
-        variant="button"
-        fontWeight="medium"
-        ml={1}
-        lineHeight={1}
-      >
-        {name}
-      </MDTypography>
+      <MDAvatar src={image} name={name} size="sm" />
+      <MDBox ml={2} lineHeight={1}>
+        <MDTypography display="block" variant="button" fontWeight="medium">
+          {name}
+        </MDTypography>
+        <MDTypography variant="caption">{email}</MDTypography>
+      </MDBox>
     </MDBox>
   );
-
   const Progress = ({ color, value }) => (
     <MDBox display="flex" alignItems="center">
       <MDTypography variant="caption" color="text" fontWeight="medium">
@@ -47,90 +48,42 @@ export default function data() {
 
   return {
     columns: [
-      { Header: "project", accessor: "project", width: "30%", align: "left" },
-      { Header: "budget", accessor: "budget", align: "left" },
-      { Header: "status", accessor: "status", align: "center" },
-      { Header: "completion", accessor: "completion", align: "center" },
-      { Header: "action", accessor: "action", align: "center" },
+      { Header: "Name", accessor: "author", width: "30%", align: "left" },
+      { Header: "Email", accessor: "function", align: "left" },
+      { Header: "Phone", accessor: "status", align: "center" },
+      { Header: "Score", accessor: "employed", align: "center" },
     ],
 
     rows: [
       {
-        project: <Project image={LogoAsana} name="Asana" />,
-        budget: (
-          <MDTypography
-            component="a"
-            href="#"
-            variant="button"
-            color="text"
-            fontWeight="medium"
-          >
-            $2,500
-          </MDTypography>
+        author: (
+          <Author
+            image={team2}
+            name="John Michael"
+            email="john@creative-tim.com"
+          />
         ),
-        status: (
-          <MDTypography
-            component="a"
-            href="#"
-            variant="caption"
-            color="text"
-            fontWeight="medium"
-          >
-            working
-          </MDTypography>
+        function: (
+          <MDTypography variant="caption">john@creative-tim.com</MDTypography>
         ),
-        completion: <Progress color="info" value={60} />,
-        action: (
-          <MDTypography component="a" href="#" color="text">
-            <Icon>more_vert</Icon>
-          </MDTypography>
-        ),
-      },
-      {
-        project: <Project image={logoGithub} name="Github" />,
-        budget: (
-          <MDTypography
-            component="a"
-            href="#"
-            variant="button"
-            color="text"
-            fontWeight="medium"
-          >
-            $5,000
-          </MDTypography>
-        ),
-        status: (
-          <MDTypography
-            component="a"
-            href="#"
-            variant="caption"
-            color="text"
-            fontWeight="medium"
-          >
-            done
-          </MDTypography>
-        ),
+        status: generateRandomPhone(), // Random phone number
+        employed: generateRandomScore(), // Random score
         completion: <Progress color="success" value={100} />,
-        action: (
-          <MDTypography component="a" href="#" color="text">
-            <Icon>more_vert</Icon>
-          </MDTypography>
-        ),
       },
       {
-        project: <Project image={logoAtlassian} name="Atlassian" />,
-        budget: (
-          <MDTypography
-            component="a"
-            href="#"
-            variant="button"
-            color="text"
-            fontWeight="medium"
-          >
-            $3,400
-          </MDTypography>
+        author: (
+          <Author
+            image={team3}
+            name="Alexa Liras"
+            email="alexa@creative-tim.com"
+          />
         ),
-        status: (
+        function: (
+          <MDTypography variant="caption">alexa@creative-tim.com</MDTypography>
+        ),
+        status: generateRandomPhone(), // Random phone number
+        employed: generateRandomScore(), // Random score
+        action: (
           <MDTypography
             component="a"
             href="#"
@@ -138,30 +91,26 @@ export default function data() {
             color="text"
             fontWeight="medium"
           >
-            canceled
-          </MDTypography>
-        ),
-        completion: <Progress color="error" value={30} />,
-        action: (
-          <MDTypography component="a" href="#" color="text">
-            <Icon>more_vert</Icon>
+            Edit
           </MDTypography>
         ),
       },
       {
-        project: <Project image={logoSpotify} name="Spotify" />,
-        budget: (
-          <MDTypography
-            component="a"
-            href="#"
-            variant="button"
-            color="text"
-            fontWeight="medium"
-          >
-            $14,000
+        author: (
+          <Author
+            image={team4}
+            name="Laurent Perrier"
+            email="laurent@creative-tim.com"
+          />
+        ),
+        function: (
+          <MDTypography variant="caption">
+            laurent@creative-tim.com
           </MDTypography>
         ),
-        status: (
+        status: generateRandomPhone(), // Random phone number
+        employed: generateRandomScore(), // Random score
+        action: (
           <MDTypography
             component="a"
             href="#"
@@ -169,30 +118,26 @@ export default function data() {
             color="text"
             fontWeight="medium"
           >
-            working
-          </MDTypography>
-        ),
-        completion: <Progress color="info" value={80} />,
-        action: (
-          <MDTypography component="a" href="#" color="text">
-            <Icon>more_vert</Icon>
+            Edit
           </MDTypography>
         ),
       },
       {
-        project: <Project image={logoSlack} name="Slack" />,
-        budget: (
-          <MDTypography
-            component="a"
-            href="#"
-            variant="button"
-            color="text"
-            fontWeight="medium"
-          >
-            $1,000
+        author: (
+          <Author
+            image={team3}
+            name="Michael Levi"
+            email="michael@creative-tim.com"
+          />
+        ),
+        function: (
+          <MDTypography variant="caption">
+            michael@creative-tim.com
           </MDTypography>
         ),
-        status: (
+        status: generateRandomPhone(), // Random phone number
+        employed: generateRandomScore(), // Random score
+        action: (
           <MDTypography
             component="a"
             href="#"
@@ -200,30 +145,26 @@ export default function data() {
             color="text"
             fontWeight="medium"
           >
-            canceled
-          </MDTypography>
-        ),
-        completion: <Progress color="error" value={0} />,
-        action: (
-          <MDTypography component="a" href="#" color="text">
-            <Icon>more_vert</Icon>
+            Edit
           </MDTypography>
         ),
       },
       {
-        project: <Project image={logoInvesion} name="Invesion" />,
-        budget: (
-          <MDTypography
-            component="a"
-            href="#"
-            variant="button"
-            color="text"
-            fontWeight="medium"
-          >
-            $2,300
+        author: (
+          <Author
+            image={team3}
+            name="Richard Gran"
+            email="richard@creative-tim.com"
+          />
+        ),
+        function: (
+          <MDTypography variant="caption">
+            richard@creative-tim.com
           </MDTypography>
         ),
-        status: (
+        status: generateRandomPhone(), // Random phone number
+        employed: generateRandomScore(), // Random score
+        action: (
           <MDTypography
             component="a"
             href="#"
@@ -231,13 +172,32 @@ export default function data() {
             color="text"
             fontWeight="medium"
           >
-            done
+            Edit
           </MDTypography>
         ),
-        completion: <Progress color="success" value={100} />,
+      },
+      {
+        author: (
+          <Author
+            image={team4}
+            name="Miriam Eric"
+            email="miriam@creative-tim.com"
+          />
+        ),
+        function: (
+          <MDTypography variant="caption">miriam@creative-tim.com</MDTypography>
+        ),
+        status: generateRandomPhone(), // Random phone number
+        employed: generateRandomScore(), // Random score
         action: (
-          <MDTypography component="a" href="#" color="text">
-            <Icon>more_vert</Icon>
+          <MDTypography
+            component="a"
+            href="#"
+            variant="caption"
+            color="text"
+            fontWeight="medium"
+          >
+            Edit
           </MDTypography>
         ),
       },

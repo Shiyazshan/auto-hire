@@ -12,40 +12,41 @@ import team2 from "assets/images/team-2.jpg";
 import team3 from "assets/images/team-3.jpg";
 import team4 from "assets/images/team-4.jpg";
 
+// Utility function to generate a random 10-digit phone number
+const generateRandomPhone = () => {
+  const phone = Math.floor(Math.random() * 10000000000); // Generates a 10-digit number
+  return `+${phone.toString().padStart(10, "0")}`; // Prepending "+" and ensuring it is 10 digits long
+};
+
+// Utility function to generate a random score between 1 and 10
+const generateRandomScore = () => {
+  return Math.floor(Math.random() * 10) + 1; // Generates a score between 1 and 10
+};
+
 export default function data() {
-  const Author = ({ image, name, email }) => (
+  const Author = ({ image, name }) => (
     <MDBox display="flex" alignItems="center" lineHeight={1}>
       <MDAvatar src={image} name={name} size="sm" />
       <MDBox ml={2} lineHeight={1}>
         <MDTypography display="block" variant="button" fontWeight="medium">
           {name}
         </MDTypography>
-        <MDTypography variant="caption">{email}</MDTypography>
       </MDBox>
     </MDBox>
   );
 
-  const Job = ({ title, description }) => (
+  const Job = ({ email }) => (
     <MDBox lineHeight={1} textAlign="left">
-      <MDTypography
-        display="block"
-        variant="caption"
-        color="text"
-        fontWeight="medium"
-      >
-        {title}
-      </MDTypography>
-      <MDTypography variant="caption">{description}</MDTypography>
+      <MDTypography variant="caption">{email}</MDTypography>
     </MDBox>
   );
 
   return {
     columns: [
-      { Header: "author", accessor: "author", width: "45%", align: "left" },
-      { Header: "function", accessor: "function", align: "left" },
-      { Header: "status", accessor: "status", align: "center" },
-      { Header: "employed", accessor: "employed", align: "center" },
-      { Header: "action", accessor: "action", align: "center" },
+      { Header: "Name", accessor: "author", width: "30%", align: "left" },
+      { Header: "Email", accessor: "function", align: "left" },
+      { Header: "Phone", accessor: "status", align: "center" },
+      { Header: "Score", accessor: "employed", align: "center" },
     ],
 
     rows: [
@@ -57,28 +58,9 @@ export default function data() {
             email="john@creative-tim.com"
           />
         ),
-        function: <Job title="Manager" description="Organization" />,
-        status: (
-          <MDBox ml={-1}>
-            <MDBadge
-              badgeContent="online"
-              color="success"
-              variant="gradient"
-              size="sm"
-            />
-          </MDBox>
-        ),
-        employed: (
-          <MDTypography
-            component="a"
-            href="#"
-            variant="caption"
-            color="text"
-            fontWeight="medium"
-          >
-            23/04/18
-          </MDTypography>
-        ),
+        function: <Job email="john@creative-tim.com" />,
+        status: generateRandomPhone(), // Random phone number
+        employed: generateRandomScore(), // Random score
         action: (
           <MDTypography
             component="a"
@@ -99,28 +81,9 @@ export default function data() {
             email="alexa@creative-tim.com"
           />
         ),
-        function: <Job title="Programator" description="Developer" />,
-        status: (
-          <MDBox ml={-1}>
-            <MDBadge
-              badgeContent="offline"
-              color="dark"
-              variant="gradient"
-              size="sm"
-            />
-          </MDBox>
-        ),
-        employed: (
-          <MDTypography
-            component="a"
-            href="#"
-            variant="caption"
-            color="text"
-            fontWeight="medium"
-          >
-            11/01/19
-          </MDTypography>
-        ),
+        function: <Job email="alexa@creative-tim.com" />,
+        status: generateRandomPhone(), // Random phone number
+        employed: generateRandomScore(), // Random score
         action: (
           <MDTypography
             component="a"
@@ -141,28 +104,9 @@ export default function data() {
             email="laurent@creative-tim.com"
           />
         ),
-        function: <Job title="Executive" description="Projects" />,
-        status: (
-          <MDBox ml={-1}>
-            <MDBadge
-              badgeContent="online"
-              color="success"
-              variant="gradient"
-              size="sm"
-            />
-          </MDBox>
-        ),
-        employed: (
-          <MDTypography
-            component="a"
-            href="#"
-            variant="caption"
-            color="text"
-            fontWeight="medium"
-          >
-            19/09/17
-          </MDTypography>
-        ),
+        function: <Job email="laurent@creative-tim.com" />,
+        status: generateRandomPhone(), // Random phone number
+        employed: generateRandomScore(), // Random score
         action: (
           <MDTypography
             component="a"
@@ -183,28 +127,9 @@ export default function data() {
             email="michael@creative-tim.com"
           />
         ),
-        function: <Job title="Programator" description="Developer" />,
-        status: (
-          <MDBox ml={-1}>
-            <MDBadge
-              badgeContent="online"
-              color="success"
-              variant="gradient"
-              size="sm"
-            />
-          </MDBox>
-        ),
-        employed: (
-          <MDTypography
-            component="a"
-            href="#"
-            variant="caption"
-            color="text"
-            fontWeight="medium"
-          >
-            24/12/08
-          </MDTypography>
-        ),
+        function: <Job email="michael@creative-tim.com" />,
+        status: generateRandomPhone(), // Random phone number
+        employed: generateRandomScore(), // Random score
         action: (
           <MDTypography
             component="a"
@@ -225,28 +150,9 @@ export default function data() {
             email="richard@creative-tim.com"
           />
         ),
-        function: <Job title="Manager" description="Executive" />,
-        status: (
-          <MDBox ml={-1}>
-            <MDBadge
-              badgeContent="offline"
-              color="dark"
-              variant="gradient"
-              size="sm"
-            />
-          </MDBox>
-        ),
-        employed: (
-          <MDTypography
-            component="a"
-            href="#"
-            variant="caption"
-            color="text"
-            fontWeight="medium"
-          >
-            04/10/21
-          </MDTypography>
-        ),
+        function: <Job email="richard@creative-tim.com" />,
+        status: generateRandomPhone(), // Random phone number
+        employed: generateRandomScore(), // Random score
         action: (
           <MDTypography
             component="a"
@@ -267,28 +173,9 @@ export default function data() {
             email="miriam@creative-tim.com"
           />
         ),
-        function: <Job title="Programator" description="Developer" />,
-        status: (
-          <MDBox ml={-1}>
-            <MDBadge
-              badgeContent="offline"
-              color="dark"
-              variant="gradient"
-              size="sm"
-            />
-          </MDBox>
-        ),
-        employed: (
-          <MDTypography
-            component="a"
-            href="#"
-            variant="caption"
-            color="text"
-            fontWeight="medium"
-          >
-            14/09/20
-          </MDTypography>
-        ),
+        function: <Job email="miriam@creative-tim.com" />,
+        status: generateRandomPhone(), // Random phone number
+        employed: generateRandomScore(), // Random score
         action: (
           <MDTypography
             component="a"
