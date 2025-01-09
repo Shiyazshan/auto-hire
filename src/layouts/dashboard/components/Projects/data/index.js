@@ -1,8 +1,3 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable react/function-component-definition */
-
-
-// @mui material components
 import Tooltip from "@mui/material/Tooltip";
 import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
@@ -58,7 +53,7 @@ export default function data() {
 
   return {
     columns: [
-      { Header: "companies", accessor: "companies", width: "45%", align: "left" },
+      { Header: "Domains", accessor: "companies", width: "45%", align: "left" },
       { Header: "members", accessor: "members", width: "10%", align: "left" },
       { Header: "budget", accessor: "budget", align: "center" },
       { Header: "completion", accessor: "completion", align: "center" },
@@ -66,7 +61,7 @@ export default function data() {
 
     rows: [
       {
-        companies: <Company image={logoXD} name="Material UI XD Version" />,
+        companies: <Company image={logoXD} name="Graphic Designer" />,
         members: (
           <MDBox display="flex" py={1}>
             {avatars([
@@ -84,12 +79,17 @@ export default function data() {
         ),
         completion: (
           <MDBox width="8rem" textAlign="left">
-            <MDProgress value={60} color="info" variant="gradient" label={false} />
+            <MDProgress
+              value={60}
+              color="info"
+              variant="gradient"
+              label={false}
+            />
           </MDBox>
         ),
       },
       {
-        companies: <Company image={logoAtlassian} name="Add Progress Track" />,
+        companies: <Company image={logoAtlassian} name="Project Mangers" />,
         members: (
           <MDBox display="flex" py={1}>
             {avatars([
@@ -105,12 +105,17 @@ export default function data() {
         ),
         completion: (
           <MDBox width="8rem" textAlign="left">
-            <MDProgress value={10} color="info" variant="gradient" label={false} />
+            <MDProgress
+              value={10}
+              color="info"
+              variant="gradient"
+              label={false}
+            />
           </MDBox>
         ),
       },
       {
-        companies: <Company image={logoSlack} name="Fix Platform Errors" />,
+        companies: <Company image={logoSlack} name="Business Analyst" />,
         members: (
           <MDBox display="flex" py={1}>
             {avatars([
@@ -126,12 +131,17 @@ export default function data() {
         ),
         completion: (
           <MDBox width="8rem" textAlign="left">
-            <MDProgress value={100} color="success" variant="gradient" label={false} />
+            <MDProgress
+              value={100}
+              color="success"
+              variant="gradient"
+              label={false}
+            />
           </MDBox>
         ),
       },
       {
-        companies: <Company image={logoSpotify} name="Launch our Mobile App" />,
+        companies: <Company image={logoSpotify} name="Mobile App Developer" />,
         members: (
           <MDBox display="flex" py={1}>
             {avatars([
@@ -149,12 +159,17 @@ export default function data() {
         ),
         completion: (
           <MDBox width="8rem" textAlign="left">
-            <MDProgress value={100} color="success" variant="gradient" label={false} />
+            <MDProgress
+              value={100}
+              color="success"
+              variant="gradient"
+              label={false}
+            />
           </MDBox>
         ),
       },
       {
-        companies: <Company image={logoJira} name="Add the New Pricing Page" />,
+        companies: <Company image={logoJira} name="Product Delivery Manager" />,
         members: (
           <MDBox display="flex" py={1}>
             {avatars([[team4, "Jessica Doe"]])}
@@ -167,12 +182,17 @@ export default function data() {
         ),
         completion: (
           <MDBox width="8rem" textAlign="left">
-            <MDProgress value={25} color="info" variant="gradient" label={false} />
+            <MDProgress
+              value={25}
+              color="info"
+              variant="gradient"
+              label={false}
+            />
           </MDBox>
         ),
       },
       {
-        companies: <Company image={logoInvesion} name="Redesign New Online Shop" />,
+        companies: <Company image={logoInvesion} name="Digital Marketer" />,
         members: (
           <MDBox display="flex" py={1}>
             {avatars([
@@ -188,7 +208,12 @@ export default function data() {
         ),
         completion: (
           <MDBox width="8rem" textAlign="left">
-            <MDProgress value={40} color="info" variant="gradient" label={false} />
+            <MDProgress
+              value={40}
+              color="info"
+              variant="gradient"
+              label={false}
+            />
           </MDBox>
         ),
       },

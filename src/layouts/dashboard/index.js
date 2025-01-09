@@ -32,7 +32,7 @@ function Dashboard() {
               <ComplexStatisticsCard
                 color="dark"
                 icon="weekend"
-                title="Bookings"
+                title="Received Applications"
                 count={281}
                 percentage={{
                   color: "success",
@@ -46,7 +46,7 @@ function Dashboard() {
             <MDBox mb={1.5}>
               <ComplexStatisticsCard
                 icon="leaderboard"
-                title="Today's Users"
+                title="Shortlisted Candidates"
                 count="2,300"
                 percentage={{
                   color: "success",
@@ -61,7 +61,7 @@ function Dashboard() {
               <ComplexStatisticsCard
                 color="success"
                 icon="store"
-                title="Revenue"
+                title="Scheduled Interviews"
                 count="34k"
                 percentage={{
                   color: "success",
@@ -76,7 +76,7 @@ function Dashboard() {
               <ComplexStatisticsCard
                 color="primary"
                 icon="person_add"
-                title="Followers"
+                title="Interview Results"
                 count="+91"
                 percentage={{
                   color: "success",
@@ -93,9 +93,9 @@ function Dashboard() {
               <MDBox mb={3}>
                 <ReportsBarChart
                   color="info"
-                  title="Job Post Impressions"
-                  description="Tracks how many times the job post was shown to users."
-                  date="updated 2 minutes ago"
+                  title="website views"
+                  description="Last Campaign Performance"
+                  date="campaign sent 2 days ago"
                   chart={reportsBarChartData}
                 />
               </MDBox>
@@ -104,9 +104,11 @@ function Dashboard() {
               <MDBox mb={3}>
                 <ReportsLineChart
                   color="success"
-                  title="Applicant Demographics"
+                  title="daily sales"
                   description={
-                    "Distribution of applicants based on factors like location, experience, or skills."
+                    <>
+                      (<strong>+15%</strong>) increase in today sales.
+                    </>
                   }
                   date="updated 4 min ago"
                   chart={sales}
